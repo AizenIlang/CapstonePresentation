@@ -1,0 +1,113 @@
+{
+	"name": "SqlPoolTable2",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [
+			{
+				"name": "EmployeeNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "JobLevel",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Department",
+				"type": "varchar"
+			},
+			{
+				"name": "Education",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "JobRole",
+				"type": "varchar"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "varchar"
+			},
+			{
+				"name": "NumCompaniesWorked",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PerformanceRating",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TrainingTimeLastYear",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YearsAtCompany",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YearsInCurrentRole",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YearSinceLastPromotion",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YearsWithCurr4",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "JobSatisfaction",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EnvironmentSatisfaction",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WorkLifeBalance",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EmployeeCount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HourlyRate",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EmployeeSurvey"
+		},
+		"sqlPool": {
+			"referenceName": "Employee_DB_Pool",
+			"type": "SqlPoolReference"
+		}
+	}
+}

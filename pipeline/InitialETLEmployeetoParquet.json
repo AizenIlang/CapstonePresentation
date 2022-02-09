@@ -25,6 +25,238 @@
 					},
 					"traceLevel": "Fine"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Data flow1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "SqlPoolSink",
+						"allowCopyCommand": true
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EmployeeNumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EmployeeNumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Age",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "JobLevel",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "JobLevel",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Department",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Department",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Education",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Education",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Gender",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Gender",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JobRole",
+									"type": "String"
+								},
+								"sink": {
+									"name": "JobRole",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MartialStatus",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MaritalStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NumCompaniesWorked",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "NumCompaniesWorked",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PerformanceRating",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PerformanceRating",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "YearsAtCompany",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "YearsAtCompany",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "YearsInCurrentRole",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "YearsInCurrentRole",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "YearsWithCurr4",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "YearsWithCurr4",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "JobSatisfaction",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "JobSatisfaction",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "EnvironmentSatisfaction",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EnvironmentSatisfaction",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WorkLifeBalance",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WorkLifeBalance",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "EmployeeCount",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EmployeeCount",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "HourlyRate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "HourlyRate",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "EmployeeParque",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlPoolTable2",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

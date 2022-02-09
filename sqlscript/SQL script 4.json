@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE EmployeeSurvey\n(\n\t [EmployeeNumber] INT,\n\t [Age] INT,\n\t [JobLevel] INT,\n\t [Department] VARCHAR,\n\t [Education] VARCHAR,\n\t [Gender] VARCHAR, \n\t [JobRole] VARCHAR,\n\t [MaritalStatus] VARCHAR,\n\t [NumCompaniesWorked] INT,\n\t [PerformanceRating] INT,\n\t [TrainingTimeLastYear] INT,\n\t [YearsAtCompany] INT,\n\t [YearsInCurrentRole] INT,\n\t [YearSinceLastPromotion] INT,\n\t [YearsWithCurr4] INT,\n\t [JobSatisfaction] INT,\n\t [EnvironmentSatisfaction] INT,\n\t [WorkLifeBalance] INT,\n\t [EmployeeCount] INT,\n\t [HourlyRate] DECIMAL\n)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "Employee_DB_Pool",
+				"poolName": "Employee_DB_Pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
