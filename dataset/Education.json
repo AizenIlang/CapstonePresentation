@@ -8,6 +8,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "D_Education",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "HR_employeesurvey_PBI test.xlsx",
