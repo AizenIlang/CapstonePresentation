@@ -1,0 +1,99 @@
+{
+	"name": "Survey",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "F_EmployeeSurvey",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HR_employeesurvey_PBI test.xlsx",
+				"folderPath": "input",
+				"fileSystem": "danzeefs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "EmployeeNumber",
+				"type": "String"
+			},
+			{
+				"name": "Department",
+				"type": "String"
+			},
+			{
+				"name": "Education",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "JobLevel",
+				"type": "String"
+			},
+			{
+				"name": "JobRole",
+				"type": "String"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "String"
+			},
+			{
+				"name": "NumCompaniesWorked",
+				"type": "String"
+			},
+			{
+				"name": "PerformanceRating",
+				"type": "String"
+			},
+			{
+				"name": "TrainingTimesLastYear",
+				"type": "String"
+			},
+			{
+				"name": "YearsAtCompany",
+				"type": "String"
+			},
+			{
+				"name": "YearsInCurrentRole",
+				"type": "String"
+			},
+			{
+				"name": "YearsSinceLastPromotion",
+				"type": "String"
+			},
+			{
+				"name": "YearsWithCurr4",
+				"type": "String"
+			},
+			{
+				"name": "JobSatisfaction",
+				"type": "String"
+			},
+			{
+				"name": "EnvironmentSatisfaction",
+				"type": "String"
+			},
+			{
+				"name": "WorkLifeBalance",
+				"type": "String"
+			},
+			{
+				"name": "EmployeeCount",
+				"type": "String"
+			}
+		]
+	}
+}

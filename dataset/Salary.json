@@ -1,0 +1,31 @@
+{
+	"name": "Salary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "F_EmployeeSalaries",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HR_employeesurvey_PBI test.xlsx",
+				"folderPath": "input",
+				"fileSystem": "danzeefs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "EmployeeNumber",
+				"type": "String"
+			},
+			{
+				"name": "HourlyRate",
+				"type": "String"
+			}
+		]
+	}
+}

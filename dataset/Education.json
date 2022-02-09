@@ -1,0 +1,30 @@
+{
+	"name": "Education",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HR_employeesurvey_PBI test.xlsx",
+				"folderPath": "input",
+				"fileSystem": "danzeefs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "EducationId",
+				"type": "String"
+			},
+			{
+				"name": "Education",
+				"type": "String"
+			}
+		]
+	}
+}

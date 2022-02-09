@@ -1,0 +1,31 @@
+{
+	"name": "JobRole",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_JobRole",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HR_employeesurvey_PBI test.xlsx",
+				"folderPath": "input",
+				"fileSystem": "danzeefs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "JobRoleId",
+				"type": "String"
+			},
+			{
+				"name": "JobRole",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Department",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_Department",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HR_employeesurvey_PBI test.xlsx",
+				"folderPath": "input",
+				"fileSystem": "danzeefs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "DepartmentId",
+				"type": "String"
+			},
+			{
+				"name": "Department",
+				"type": "String"
+			}
+		]
+	}
+}
