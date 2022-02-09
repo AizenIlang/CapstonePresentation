@@ -1,0 +1,20 @@
+{
+	"name": "MetadataDrivenCopyTask_riv_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedService1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_riv_20220209"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "CopyFromDanzeeTable",
+			"table": "MainControlTable_riv"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
