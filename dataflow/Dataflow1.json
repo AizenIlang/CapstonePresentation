@@ -1,0 +1,84 @@
+{
+	"name": "Dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Survey",
+						"type": "DatasetReference"
+					},
+					"name": "Survey"
+				},
+				{
+					"dataset": {
+						"referenceName": "Department",
+						"type": "DatasetReference"
+					},
+					"name": "Department"
+				},
+				{
+					"dataset": {
+						"referenceName": "Education",
+						"type": "DatasetReference"
+					},
+					"name": "Education"
+				},
+				{
+					"dataset": {
+						"referenceName": "Gender",
+						"type": "DatasetReference"
+					},
+					"name": "Gender"
+				},
+				{
+					"dataset": {
+						"referenceName": "JobRole",
+						"type": "DatasetReference"
+					},
+					"name": "JobRole"
+				},
+				{
+					"dataset": {
+						"referenceName": "MaritalStatus",
+						"type": "DatasetReference"
+					},
+					"name": "MaritalStatus"
+				},
+				{
+					"dataset": {
+						"referenceName": "Salary",
+						"type": "DatasetReference"
+					},
+					"name": "Salary"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Join2"
+				},
+				{
+					"name": "Join3"
+				},
+				{
+					"name": "Join4"
+				},
+				{
+					"name": "Join5"
+				},
+				{
+					"name": "Join6"
+				},
+				{
+					"name": "Select1"
+				}
+			],
+			"script": "source(output(\n\t\tEmployeeNumber as string,\n\t\tDepartment as string,\n\t\tEducation as string,\n\t\tGender as string,\n\t\tAge as string,\n\t\tJobLevel as string,\n\t\tJobRole as string,\n\t\tMaritalStatus as string,\n\t\tNumCompaniesWorked as string,\n\t\tPerformanceRating as string,\n\t\tTrainingTimesLastYear as string,\n\t\tYearsAtCompany as string,\n\t\tYearsInCurrentRole as string,\n\t\tYearsSinceLastPromotion as string,\n\t\tYearsWithCurr4 as string,\n\t\tJobSatisfaction as string,\n\t\tEnvironmentSatisfaction as string,\n\t\tWorkLifeBalance as string,\n\t\tEmployeeCount as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> Survey\nsource(output(\n\t\tDepartmentId as string,\n\t\tDepartment as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> Department\nsource(output(\n\t\tEducationId as string,\n\t\tEducation as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> Education\nsource(output(\n\t\tGenderId as string,\n\t\tGender as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> Gender\nsource(output(\n\t\tJobRoleId as string,\n\t\tJobRole as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> JobRole\nsource(output(\n\t\tMartialStatusId as string,\n\t\tMartialStatus as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> MaritalStatus\nsource(output(\n\t\tEmployeeNumber as string,\n\t\tHourlyRate as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> Salary\nSurvey, Department join(Survey@Department == DepartmentId,\n\tjoinType:'left',\n\tpartitionBy('hash', 1),\n\tbroadcast: 'auto')~> Join1\nJoin1, Education join(Survey@Education == EducationId,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join2\nJoin2, Gender join(Survey@Gender == GenderId,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join3\nJoin3, JobRole join(Survey@JobRole == JobRoleId,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join4\nJoin4, MaritalStatus join(MaritalStatus == MartialStatusId,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join5\nJoin5, Salary join(Survey@EmployeeNumber == Salary@EmployeeNumber,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join6\nJoin6 select(mapColumn(\n\t\tEmployeeNumber = Survey@EmployeeNumber,\n\t\tAge,\n\t\tJobLevel,\n\t\tNumCompaniesWorked,\n\t\tPerformanceRating,\n\t\tTrainingTimesLastYear,\n\t\tYearsAtCompany,\n\t\tYearsInCurrentRole,\n\t\tYearsSinceLastPromotion,\n\t\tYearsWithCurr4,\n\t\tJobSatisfaction,\n\t\tEnvironmentSatisfaction,\n\t\tWorkLifeBalance,\n\t\tEmployeeCount,\n\t\tDepartment = Department@Department,\n\t\tEducation = Education@Education,\n\t\tGender = Gender@Gender,\n\t\tJobRole = JobRole@JobRole,\n\t\tMartialStatus,\n\t\tHourlyRate\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Select1"
+		}
+	}
+}
