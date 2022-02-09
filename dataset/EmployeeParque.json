@@ -1,0 +1,19 @@
+{
+	"name": "EmployeeParque",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "capstonedanzee-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "danzeefs"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
