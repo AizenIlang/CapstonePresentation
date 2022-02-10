@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 5",
+	"properties": {
+		"content": {
+			"query": "TRUNCATE table dbo.EmployeeSurvey\n\nCOPY INTO dbo.EmployeeSurvey(EmployeeNumber 1,Age 2,JobLevel 3, Department 15, Education 16, Gender 17, JobRole 18, MaritalStatus 19, NumCompaniesWorked 4,EnvironmentSatisfaction 12,\nPerformanceRating 5, TrainingTimeLastYear 6, YearsAtCompany 7,YearsInCurrentRole 8, YearSinceLastPromotion 9,YearsWithCurr4 10,JobSatisfaction 11, WorkLifeBalance 13, EmployeeCount 14, HourlyRate 20\n)\n\nFROM 'https://danzeelake.dfs.core.windows.net/danzeefs/part-00000-3138f834-7547-4aa0-b415-b94e9c79c1fe-c000.snappy.parquet'\nWITH\n(\n    FILE_TYPE = 'PARQUET'\n    ,MAXERRORS = 0\n    ,IDENTITY_INSERT = 'OFF'\n)\n\nselect * from dbo.employeeSurvey",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "Employee_DB_Pool",
+				"poolName": "Employee_DB_Pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

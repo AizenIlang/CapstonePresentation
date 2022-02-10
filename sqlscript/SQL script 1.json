@@ -2,13 +2,13 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "CREATE EXTERNAL TABLE [dbo].[ExternalTable]\n(\n\t [EmployeeNumber] VARCHAR,\n\t [Department] VARCHAR,\n\t [Education] VARCHAR,\n\t [Gender] VARCHAR,\n\t [Age] INT,\n\t [JobLevel] INT,\n\t [JobRole] VARCHAR,\n\t [MaritalStatus] VARCHAR,\n\t [NumCompaniesWorked] INT,\n\t [PerformanceRating] INT,\n\t [TrainingTimeLastYear] INT,\n\t [YearsAtCompany] INT,\n\t [YearsInCurrentRole] INT,\n\t [YearSinceLastPromotion] INT,\n\t [YearsWithCurr4] INT,\n\t [JobSatisfaction] INT,\n\t [EnvironmentSatisfaction] INT,\n\t [WorkLifeBalance] INT,\n\t [EmployeeCount] INT\n)\nWITH\n(\n\tLOCATION = '/folder/file',\n\tDATA_SOURCE = [DataSource1],\n\tFILE_FORMAT = [FileFormat1]\n)\n",
+			"query": "CREATE EXTERNAL TABLE [dbo].[ExternalTable]\n(\n\t [EmployeeNumber] VARCHAR,\n\t [Department] VARCHAR,\n\t [Education] VARCHAR,\n\t [Gender] VARCHAR,\n\t [Age] INT,\n\t [JobLevel] INT,\n\t [JobRole] VARCHAR,\n\t [MaritalStatus] VARCHAR,\n\t [NumCompaniesWorked] INT,\n\t [PerformanceRating] INT,\n\t [TrainingTimeLastYear] INT,\n\t [YearsAtCompany] INT,\n\t [YearsInCurrentRole] INT,\n\t [YearSinceLastPromotion] INT,\n\t [YearsWithCurr4] INT,\n\t [JobSatisfaction] INT,\n\t [EnvironmentSatisfaction] INT,\n\t [WorkLifeBalance] INT,\n\t [EmployeeCount] INT\n)\nWITH\n(\n\tLOCATION = '/folder/file',\n\tDATA_SOURCE = [DataSource1],\n\tFILE_FORMAT = [FileFormat1]\n)\n\n\nALTER TABLE EmployeeSurvey Alter column EmployeeNumber VARCHAR\n",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "dbtest",
-				"poolName": "Built-in"
+				"databaseName": "Employee_DB_Pool",
+				"poolName": "Employee_DB_Pool"
 			},
 			"resultLimit": 5000
 		},
