@@ -1,5 +1,5 @@
 {
-	"name": "SQL script 2",
+	"name": "Load Parquet File",
 	"properties": {
 		"content": {
 			"query": "SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://danzeelake.dfs.core.windows.net/danzeefs/part-00000-3138f834-7547-4aa0-b415-b94e9c79c1fe-c000.snappy.parquet',\n        FORMAT='PARQUET'\n    ) AS [result] ",
